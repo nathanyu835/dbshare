@@ -5,7 +5,7 @@ var db = require("../db-setup");
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  	db.users.insert({user: "Sooraj", yes: [], no: [], pos: 0}, function(err) {
+  	/*db.users.insert({user: "Sooraj", yes: [], no: [], pos: 0}, function(err) {
 
   			db.users.find({user: "Sooraj"}).toArray(function(err, peeps){
             	
@@ -15,7 +15,8 @@ router.get('/', function(req, res, next) {
             });
 
 
-    });
+    });*/
+	res.render("index", {title: "DBShare"});
 });
 
 module.exports = router;

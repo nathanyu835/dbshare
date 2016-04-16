@@ -1,0 +1,311 @@
+body{
+	background-color: grey;
+	font-family: Lato;
+	font-variant: small-caps;
+
+}
+.navbar-brand{
+	font-family: Lato;	
+}
+
+.navbar-header{
+	width: 100px;
+}
+
+.navbar-right{
+	font-family: Lato;
+}
+
+.title{
+  margin-top: 150px;
+
+  padding: 0px 15px 0px 15px;
+  text-align: center;
+  font-family: Lato;
+  font-size: 75px;
+  color: black;
+  font-weight: 50%;
+  opacity: 1;
+  letter-spacing: 5px;
+}
+
+.subtitle{
+
+	text-align: center;
+	font-family: Lato;
+	padding-bottom: 10vh;
+	color: black;
+	opacity: 1;
+	letter-spacing: 1px;
+	word-spacing: 6px;
+}
+
+.head{
+	width:200px;
+}
+
+.start{
+	text-align: center;
+	/*padding-top: 100px;*/
+	padding-top: 10vh;
+}
+
+/*Closer Logo styling*/
+
+.title-logo{
+	/*data-stellar-background-ratio="0.5";*/
+	background: url("/images/Collis-Center.jpg") no-repeat;
+	background-color: #2ecc71
+	width: 100vw;
+	/*background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1)), url("/images/home.jpg");*/
+	background-size: 100%;
+	height: 100vh;
+	background-attachment: fixed;
+}
+
+.closer-logo{
+	width: 120px;
+	padding: 10vh 0px 0px 0px;
+	margin: 20px auto 10px auto;
+	position: relative;
+}
+
+.logo-list-container{
+	padding: 0;
+}
+
+.logo-list-container li{
+	display: inline-block;
+}
+
+.letter-C{
+	z-index: 3;
+}
+
+.letter-E{
+	z-index: 1;
+}
+
+/*Parallax elements styling*/
+
+.home-strip{
+	background-color: white;
+}
+
+.home-strip p{
+	font-size: 20px;
+}
+
+.navbar-inverse{
+	background-color: #2c3e50;
+}
+.ele-num-1{
+	/*data-stellar-background-ratio="0.5";*/
+	/*background: url("/images/MIT-Dome.jpg") no-repeat;*/
+	background:  url("/images/MIT-Dome.jpg") no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;
+	/*background-position: relative;*/
+}
+
+.ele-num-2{
+	/*background: url("/images/study-group.jpg") no-repeat;*/
+	/*data-stellar-background-ratio="0.5";*/
+	background: url("/images/study-group.jpg") no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;
+}
+
+/*Other styling*/
+
+.btn.log-in-button{
+	border-radius: 0px;
+	background: white;
+	font-family: Lato;
+	opacity: 0.85;
+	min-height: 50px;
+	font-size: 25px;
+	display: inline-block;
+  	padding: 8px;
+  	color: black;
+  	border: 2px solid white;
+  	text-align: center;
+  	outline: none;
+  	text-decoration: none;
+  	display: inline;
+  	color: black;
+}
+
+.btn.log-in-button:hover{
+
+	background-color: black;
+	color: white;
+	border: none;
+}
+.btn.sign-up-button{
+	border-radius: 0px;
+	background-color: transparent;
+	background-color: white;
+	opacity: 0.85;
+	font-family: Lato;
+	color: black;
+	opacity: 100%;
+	min-height: 50px;
+	color: black;
+	padding: 8px;
+  	border: 2px solid white;
+	font-size: 25px;
+	display: inline;
+	color: black;
+}
+
+.btn.sign-up-button:hover{
+
+	background-color: black;
+	color: white;
+	border: none;
+}
+
+.btn.btn-cancel-action{
+	border-radius: 0px;
+	font-family: Lato;
+	
+}
+
+.btn.btn-login-submit{
+	border-radius: 0px;
+	font-family: Lato;
+	
+}
+
+.well{
+
+	background: rgba(100,100,100,0.2) !important;
+	color: white
+
+}
+
+legend{
+
+	color: white;
+}
+
+a{
+
+	color: white;
+}
+
+a:hover{
+
+	color: gray;
+}
+.sign-up-form{
+	
+	opacity: 0;
+	position: absolute;
+	margin-right: 10vw;
+	min-width: 300px;
+	max-width: 300px;
+	right: 0;
+	margin-top: 25px;
+	margin-left: 200px;
+	background: white !important;
+	color: black !important;
+	z-index: 1;
+}
+
+input:focus{
+	border: 1px solid green;
+}
+
+.log-in-form{
+	
+	opacity:0;
+	position: absolute;
+	background: white !important;
+	color: black;
+	margin-left: 5px;
+	min-width: 300px;
+	max-width: 300px;
+	margin-top: 100px;
+}
+
+.login-title{
+	text-align: center;
+	font-family: Lato;
+	color: black;
+}
+
+.signup-title{
+	text-align: center;
+	font-family: Lato;
+	color: black;
+}
+.yes-account{
+	text-align: center;
+	color: black ;
+}
+
+.no-account{
+	text-align: center;
+	color: black;
+}
+
+h2{
+
+	text-align: center;
+}
+
+p{
+
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+h5{
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+.ele-num-3{
+
+	background-color: #2c3e50;
+	color: white;
+}
+
+.message{
+
+	color: red;
+}
+
+.message2{
+
+	color: red;
+}
+
+.blurb {
+
+	background-color: black;
+	color: white;
+	opacity: 0.65;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	border-radius: 2px;
+
+
+}
+
+#secret{
+
+	opacity: 0.65;
+}
+
+#secret2{
+
+	opacity: 0.65;
+}
+
+.about{
+
+	opacity: 1.0;
+}
