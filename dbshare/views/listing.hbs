@@ -4,7 +4,7 @@
     <title>{{title}}</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel='stylesheet' href='/stylesheets/index.css'>
+    <link rel='stylesheet' href='/stylesheets/style.css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato">
@@ -13,10 +13,24 @@
 
   </head>
 
+<body>
+<div class = "main", style="background-color: #bdc3c7;">
+<div class = "col-md-12 main">
+  <hr>
+  <div class="row">
+    <div class="col-sm-4 col-md-6">
+      <h1>Open Offers</h1>
+    </div>
+<button type="button" class="btn btn-info btn-lg add" data-toggle="modal" data-target="#myModal">Create Offer</button>
 
+  </div>
+  <hr>
+  <div class = "container listing">
+  <div class="scrollable">
+  {{#each offers}}
 
+  
 
-{{#each offers}}
 
       <div class = "col-md-1"></div>
       <div class = "col-md-2">
@@ -27,13 +41,19 @@
        </form>
    </div>
 
+  {{/each}}
+  </div>
+  </div>
+</div>
 
-         
 
-{{/each}}
 
 <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create Offer</button>
+{{!-- <div class="col-lg-1 col-centered">
+<div class = "row">
+<button type="button" class="btn btn-info btn-lg add" data-toggle="modal" data-target="#myModal">Create Offer</button>
+</div>
+</div> --}}
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
@@ -49,7 +69,7 @@
         <div class="container-fluid">
   <div class="row">   
     <div class="col-md-3"></div>
-    <div class="col-md-12">
+    <div class="col-md-12 main">
     <div class="col-md-3"></div>
       <div class="col-md-6">
         <div class="container-fluid"> 
@@ -97,4 +117,6 @@
 
   </div>
 </div>
+</div>
+</body>
 </html>
