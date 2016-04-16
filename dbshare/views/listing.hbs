@@ -22,6 +22,8 @@
       <h1>Open Offers</h1>
     </div>
 <button type="button" class="btn btn-info btn-lg add" data-toggle="modal" data-target="#myModal">Create Offer</button>
+<a href="/transaction" class="btn btn-info btn-lg add">Transactions</a>
+
 
   </div>
   <hr>
@@ -34,9 +36,9 @@
 
 
   <h3>{{this.meal}} at {{this.location}} for ${{this.price}}</h3>
-  <span>{{this.user}}</span>
+  <span>{{this.name}}</span>
   <form action = "/accept" method = "post">
-      <button name ="button" class = "buy" value = {{this.user}}>Accept</button>
+      <button name ="button" class = "buy" value = {{this.name}}>Accept</button>
   </form>
   <hr>      
 

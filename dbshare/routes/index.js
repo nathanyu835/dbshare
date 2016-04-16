@@ -41,9 +41,26 @@ router.post('/login', function(req,res,next){
 });
 
 router.get('/transaction', function(req, res) {
- 	db.offers.find({accepted: true, user: req.session.user}).toArray(function(e,offers){
+	console.log(req.session.user.user);
+ 	db.offers.find({accepted: true, user: req.session.user.user}).toArray(function(e,offers){
   	res.render('transaction',{offers:offers})
   })
+});
+
+
+router.post('/make', function(req, res) {
+ 	console.log(req.body.name);
+ 	console.log(req.body.location);
+ 	db.offers.insert({
+ 		name: req.body.name, 
+ 		user: req.session.user.user,
+ 		location: req.body.location,
+ 		meal: req.body.meal,
+ 		price: req.body.price,
+ 		accepted: false
+ 	}, function(err) {
+		res.redirect('/listing');
+	});
 });
 
 router.post("/signup", function(req, res, next){
@@ -91,7 +108,7 @@ router.post("/signup", function(req, res, next){
 router.post("/accept", function(req, res, next){
 
 	var user = ""+req.body.button;
-	db.offers.update({user: user}, {$set:{accepted: true}}, function(err){
+	db.offers.update({name: user}, {$set:{accepted: true}}, function(err){
 		res.redirect("/listing");
 	})
 
