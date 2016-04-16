@@ -9,6 +9,8 @@ var db = require("./db-setup.js");
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var make = require('./routes/make');
+var listing = require('./routes/listing');
+
 
 var app = express();
 
@@ -31,14 +33,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/make', make);
+app.use('/listing', listing);
 
-// router.post('/make', function(req, res) {
-//   new Superhero({name : req.body.name})
-//   .save(function(err, superhero) {
-//     console.log(superhero)
-//     res.redirect('/api/superheros');
-//   });
-// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
