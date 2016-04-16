@@ -27,7 +27,7 @@ router.post('/login', function(req,res,next){
 
   db.users.find({user: username, password: password}).toArray(function (err, peeps) {
     if (peeps.length > 0) {
-    	db.offers.find().toArray(function(err, offerList){
+    	db.offers.find({accepted: false}).toArray(function(err, offerList){
     		res.render("listing", {offers: offerList});
     	})
     }
@@ -60,7 +60,7 @@ router.post("/signup", function(req, res, next){
       	//Add to users database
         db.users.insert({user: username, password: password, email: email, notifications:[]}, function(err){
           
-          db.offers.find().toArray(function(err,offerList){
+          db.offers.find({accepted: false}).toArray(function(err,offerList){
 
           	res.render("listing", {title: "DBSHARE", offers: offerList});
           })
@@ -82,16 +82,9 @@ router.post("/signup", function(req, res, next){
 
 router.post("/accept", function(req, res, next){
 
-	var id = req.body.button;
-	console.log(id)
-	db.offers.find({_id: id}).toArray(function(err,offer){
-
-		currOffer = offer[0];
-		db.users.find({user: currOffer.user}).toArray(function(err,user){
-
-			
-		})
-		
+	var user = ""+req.body.button;
+	db.offers.update({user: user}, {$set:{accepted: true}}, function(err){
+		res.redirect("/listing");
 	})
 
 });

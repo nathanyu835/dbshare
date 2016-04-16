@@ -3,7 +3,7 @@ var router = express.Router();
 var db = require("../db-setup");
 
 router.get('/', function(req, res) {
-  db.offers.find().toArray(function(e,offers){
+  db.offers.find({accepted: false}).toArray(function(e,offers){
   	res.render('listing',{offers:offers})
   })
 });
@@ -14,7 +14,8 @@ router.post('/', function(req, res) {
  	db.offers.insert({user: req.body.name, 
  		location: req.body.location,
  		meal: req.body.meal,
- 		price: req.body.price
+ 		price: req.body.price,
+ 		accepted: false
  	}, function(err) {
 		res.redirect('/listing');
 	});
