@@ -11,7 +11,8 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
  	console.log(req.body.name);
  	console.log(req.body.location);
- 	db.offers.insert({user: req.body.name, 
+ 	db.offers.insert({
+ 		user: req.body.name, 
  		location: req.body.location,
  		meal: req.body.meal,
  		price: req.body.price

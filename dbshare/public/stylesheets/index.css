@@ -1,3 +1,4 @@
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 body{
 	background-color: grey;
 	font-family: Lato;
@@ -5,7 +6,8 @@ body{
 
 }
 .navbar-brand{
-	font-family: Lato;	
+	color:white;
+	font-family: Lato;
 }
 
 .navbar-header{
@@ -23,11 +25,22 @@ body{
   text-align: center;
   font-family: Lato;
   font-size: 75px;
-  color: black;
+  font-weight: 700;
+  color: #ecf0f1;
   font-weight: 50%;
   opacity: 1;
+  font-family: 'Montserrat', sans-serif;
   letter-spacing: 5px;
 }
+
+.main{
+	margin: 10px;
+	background-color: #2c3e50;
+	background: rgba(46,204,113, .7);
+	border-radius: 10px;
+	font-family: 'Montserrat', sans-serif;
+}
+
 
 .subtitle{
 
@@ -97,7 +110,7 @@ body{
 }
 
 .navbar-inverse{
-	background-color: #2c3e50;
+	background-color: #2ecc71;
 }
 .ele-num-1{
 	/*data-stellar-background-ratio="0.5";*/
@@ -294,6 +307,7 @@ h5{
 
 
 }
+
 
 #secret{
 
