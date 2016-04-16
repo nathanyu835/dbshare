@@ -38,6 +38,12 @@ router.post('/login', function(req,res,next){
 	});
 });
 
+router.get('/transaction', function(req, res) {
+ 	db.offers.find({accepted: true, user: req.session.user}).toArray(function(e,offers){
+  	res.render('transaction',{offers:offers})
+  })
+});
+
 router.post("/signup", function(req, res, next){
 
 	var username = req.body.username;

@@ -1,0 +1,15 @@
+  </div>
+  <hr>
+  <div class = "container listing">
+  <div class="scrollable">
+  {{#each offers}}
+      <div class = "col-md-1"></div>
+      <div class = "col-md-2">
+      <div> {{this.user}}, {{this.location}}, {{this.meal}}, {{this.price}} </div>
+   		<form action = "/accept" method = "post">
+          <button name ="button" value = {{this.user}}>Accept</button>
+       </form>
+   </div>
+  {{/each}}
+</div>
+</div>
