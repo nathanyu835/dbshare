@@ -24,9 +24,11 @@ router.post('/login', function(req,res,next){
 
   var username = req.body.username;
   var password = req.body.password;
+ 
 
   db.users.find({user: username, password: password}).toArray(function (err, peeps) {
     if (peeps.length > 0) {
+    	req.session.user = peeps[0];
     	db.offers.find({accepted: false}).toArray(function(err, offerList){
     		res.render("listing", {offers: offerList});
     	})
@@ -48,7 +50,7 @@ router.post("/signup", function(req, res, next){
 
 	
   db.users.find({user: username}).toArray(function (err, peeps) {
-    
+    req.session.user = username;
   	//username already in use
     if (peeps.length > 0) { 
       // the user needs to be updated

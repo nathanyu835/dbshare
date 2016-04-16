@@ -32,14 +32,14 @@
   
 
 
-      <div class = "col-md-1"></div>
-      <div class = "col-md-2">
- 
-      <div> {{this.user}}, {{this.location}}, {{this.meal}}, {{this.price}} </div>
-   		<form action = "/accept" method = "post">
-          <button name ="button" value = {{this.user}}>Accept</button>
-       </form>
-   </div>
+
+  <h3>{{this.meal}} at {{this.location}} for ${{this.price}}</h3>
+  <span>{{this.user}}</span>
+  <form action = "/accept" method = "post">
+      <button name ="button" class = "buy" value = {{this.user}}>Accept</button>
+  </form>
+  <hr>      
+
 
   {{/each}}
   </div>

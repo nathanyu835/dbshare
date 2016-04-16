@@ -5,11 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var db = require("./db-setup.js");
+var session = require("client-sessions");
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var make = require('./routes/make');
 var listing = require('./routes/listing');
+
+
 
 
 var app = express();
@@ -29,6 +32,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+  cookieName: 'session',
+  secret: 'random_string_goes_here',
+  duration: 30 * 60 * 1000,
+  activeDuration: 5 * 60 * 1000,
+  httpOnly: true,
+  secure: true,
+  ephemeral: true
+}));
 
 app.use('/', routes);
 app.use('/users', users);
@@ -66,6 +79,16 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+app.use(session({
+  cookieName: 'session',
+  secret: 'random_string_goes_here',
+  duration: 30 * 60 * 1000,
+  activeDuration: 5 * 60 * 1000,
+  httpOnly: true,
+  secure: true,
+  ephemeral: true
+}));
 
 
 module.exports = app;
