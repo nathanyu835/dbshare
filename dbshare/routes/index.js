@@ -58,7 +58,7 @@ router.post("/signup", function(req, res, next){
     else if (password == passwordcheck) { 
 
       	//Add to users database
-        db.users.insert({user: username, password: password, email: email}, function(err){
+        db.users.insert({user: username, password: password, email: email, notifications:[]}, function(err){
           
           db.offers.find().toArray(function(err,offerList){
 
@@ -78,6 +78,22 @@ router.post("/signup", function(req, res, next){
     }
 
 });
+});
+
+router.post("/accept", function(req, res, next){
+
+	var id = req.body.button;
+	console.log(id)
+	db.offers.find({_id: id}).toArray(function(err,offer){
+
+		currOffer = offer[0];
+		db.users.find({user: currOffer.user}).toArray(function(err,user){
+
+			
+		})
+		
+	})
+
 });
 
 module.exports = router;
