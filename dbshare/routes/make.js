@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
  	console.log(req.body.name);
  	db.offers.insert({user: req.body.name}, function(err) {
-		res.redirect('/make');
+		res.redirect('/listing');
 	});
 });
 
